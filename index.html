@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+ 
+</head>
+
+<body>
+
+  <label for="inputBookList">Enter your favourite book list:</label>
+  <textarea id="inputBookList" rows="5" cols="50"></textarea>
+  <button id="displayBookListButton">Display Book List</button>
+  <p id="displayBookList"></p>
+
+<label for="inputRecepie">Enter a recepie:</label>
+  <textarea id="inputRecepie" rows="7" cols="50"></textarea>
+  <button id="displayRecepieButton">Display Recepie</button>
+  <p id="displayRecepie"></p>
+
+  <label for="inputBio">Enter your personal bio:</label>
+  <textarea id="inputBio" rows="7" cols="50"></textarea>
+  <button id="displayBioButton">Display Button</button>
+  <p id="displayBio"></p>
+
+  <label for="inputGoals">Enter your list of goals:</label>
+  <textarea id="inputGoals" rows="7" cols="50"></textarea>
+  <button id="displayGoalsButton">Display Goals</button>
+  <p id="displayGoals"></p>
+
+  <label for="inputStory">Enter a short story or anecdote</label>
+  <textarea id="inputStory" rows="7" cols="50"></textarea>
+  <button id="displayStoryButton">Display Story</button>
+  <p id = "displayStory"></p>
+ 
+  <script>
+const inputBookList = document.getElementById("inputBookList")
+    const displayBookListButton = document.getElementById("displayBookListButton")
+    const displayBookList = document.getElementById("displayBookList")
+    displayBookListButton.addEventListener("click" , function(){
+      let bookList = inputBookList.value
+      displayBookList.textContent = `Your favourite books: ${bookList}`
+    })
+
+
+    const inputRecepie = document.getElementById("inputRecepie")
+    const displayRecepieButton = document.getElementById("displayRecepieButton")
+    const displayRecepie = document.getElementById("displayRecepie")
+    displayRecepieButton.addEventListener("click" , function(){
+      let recepie = inputRecepie.value
+      let recepieArray = recepie.split("\n\n")
+      let ingredients = recepieArray[0]
+      let instructions = recepieArray[1]
+      displayRecepie.innerHTML = `
+      <h5>Ingredients:</h5>
+      <p>${ingredients}</p>
+      <h5>Instructions</h5>
+      <p>${instructions}</p>
+      
+      `
+    })
+
+
+    const inputBio = document.getElementById("inputBio")
+    const displayBioButton = document.getElementById("displayBioButton")
+    const displayBio = document.getElementById("displayBio")
+    displayBioButton.addEventListener("click" , function(){
+      let bio = inputBio.value
+      displayBio.textContent = `Your personal bio: ${bio}`
+    })
+
+
+    const inputGoals = document.getElementById("inputGoals")
+    const displayGoalsButton = document.getElementById("displayGoalsButton")
+    const displayGoals = document.getElementById("displayGoals")
+    displayGoalsButton.addEventListener("click" , function(){
+      let goals = inputGoals.value
+      displayGoals.textContent = `Your list of goals: ${goals}`
+    })
+
+    const inputStory = document.getElementById("inputStory")
+    const displayStoryButton = document.getElementById("displayStoryButton")
+    const displayStory = document.getElementById("displayStory")
+    displayStoryButton.addEventListener("click" , function(){
+      let story = inputStory.value
+      displayStory.textContent = `Your short story or anecdote: ${story}`
+    })
+
+    
+  </script>
+</body>
+
+</html>
